@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# fans-client
 
-## Getting Started
+홍익대학교 2026년 1학기 소프트웨어공학 "프로세스에 입각한 바이브코딩의 효과 논술" 과제 수행 프로젝트.
+평소 자주 사용하는 JYP FANS 팬 커뮤니티 플랫폼을 **소프트웨어공학 프로세스에 입각한 AI 기반 vibe coding**으로 구현할 예정입니다.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 팀 소개
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+이시윤 (1인 프로젝트)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 기술 스택
 
-## Learn More
+Next.js + Supabase
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 구현 범위
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+FANS 서비스에 존재하는 기능 중 이번 과제를 수행하면서 구현할 범위와 구현하지 않을 범위를 정리합니다.
 
-## Deploy on Vercel
+### In Scope
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- 커뮤니티 (게시글/댓글)
+- 아티스트 공식 게시글/답글
+- 이벤트 신청
+- 멤버십 접근 제어
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Out of Scope
+
+- 실시간 라이브/채팅 (WebRTC)
+- 결제 및 글로벌 배송 풀플로우
+- 오프라인 대기열/QR 현장 운영
