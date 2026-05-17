@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.0",
+    "@intellectronica/ruler": "^0.3.40",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
