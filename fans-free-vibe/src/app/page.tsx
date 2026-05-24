@@ -1,65 +1,70 @@
-import Image from "next/image";
+import Link from "next/link";
+
+const logoUrl = "https://www.figma.com/api/mcp/asset/03a1cb89-0807-4bfb-ad72-5267c6d0ecd8";
+const navIcons = [
+  "https://www.figma.com/api/mcp/asset/82772cbe-d3e0-4b78-a626-0f2295df9b01",
+  "https://www.figma.com/api/mcp/asset/52d9b797-5d92-4be8-9512-4e56ab27106e",
+  "https://www.figma.com/api/mcp/asset/dd93d1fc-e56b-4845-b8fa-7c4d1f1dc333",
+  "https://www.figma.com/api/mcp/asset/cc4509d5-bfbb-485a-8b7f-2c322313b006",
+];
+
+const dimOverlayUrl = "https://www.figma.com/api/mcp/asset/ff9cded3-b6fe-40f5-9613-1d4a7bac3c11";
+
+function buildCommunityUrl(artistSlug: string) {
+  return `/community/${artistSlug}/artist`;
+}
+
+const cards = [
+  { title: "Stray Kids", slug: "StrayKids", image: "https://www.figma.com/api/mcp/asset/9f9d8f13-22d9-42e4-8915-dc6ef04e66ce" },
+  { title: "Xdinary Heroes", slug: "XdinaryHeroes", image: "https://www.figma.com/api/mcp/asset/f99e3d05-5aa8-4beb-9451-2fbf4d3ae989" },
+  { title: "DAY6", slug: "DAY6", image: "https://www.figma.com/api/mcp/asset/47ba376d-23ba-4601-8ccd-f3e685718bbd" },
+  { title: "PARK YOONHO", slug: "PARKYOONHO", image: "https://www.figma.com/api/mcp/asset/6f980d5f-94a0-4f53-8e3e-03f841317d7d" },
+  { title: "GIRLSET", slug: "GIRLSET", image: "https://www.figma.com/api/mcp/asset/649a4af2-d21c-4c57-be69-668b7a22179c" },
+  { title: "dodree (도드리)", slug: "dodree", image: "https://www.figma.com/api/mcp/asset/4ae2c6e2-3024-43d0-96a2-d9d653f07d41" },
+  { title: "JUN. K", slug: "JUNK", image: "https://www.figma.com/api/mcp/asset/0b15efda-874a-44a3-a50c-1a2458f1c660" },
+  { title: "JANG WOOYOUNG", slug: "JANGWOOYOUNG", image: "https://www.figma.com/api/mcp/asset/b80f2882-3ae1-46fc-b715-fa18a71cbba3" },
+  { title: "TWICE", slug: "TWICE", image: "https://www.figma.com/api/mcp/asset/5e786e4f-5d5f-43f3-b26f-8e00c19b077f" },
+  { title: "NEXZ", slug: "NEXZ", image: "https://www.figma.com/api/mcp/asset/df1593cb-6488-4868-942f-423c22ee848c" },
+  { title: "NiziU", slug: "NiziU", image: "https://www.figma.com/api/mcp/asset/bb02c0d7-5c91-4277-a701-4e31a3c0388f" },
+  { title: "NICHKHUN", slug: "NICHKHUN", image: "https://www.figma.com/api/mcp/asset/cf18353d-99c5-4e42-a848-d96cc3c0f115" },
+  { title: "J.Y. Park", slug: "JYPark", image: "https://www.figma.com/api/mcp/asset/c97eee42-fba7-4f22-af09-c2af482ad014" },
+  { title: "ITZY", slug: "ITZY", image: "https://www.figma.com/api/mcp/asset/e6d9ce2f-cf7b-4f4c-8ae2-cab8de13f49d" },
+  { title: "NMIXX", slug: "NMIXX", image: "https://www.figma.com/api/mcp/asset/b6beaee0-7e71-4440-abfe-fdf395d3798b" },
+  { title: "KickFlip", slug: "KickFlip", image: "https://www.figma.com/api/mcp/asset/14a8b787-398d-43e8-b41d-525462264789" },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="fans-page">
+      <header className="fans-topbar">
+        <div className="fans-shell">
+          <img className="fans-logo" src={logoUrl} alt="Fans" />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </header>
+
+      <main className="fans-content">
+        <div className="fans-shell">
+          <section className="fans-grid" aria-label="Artist grid">
+            {cards.map((card) => (
+              <Link key={card.title} className="fans-card" href={buildCommunityUrl(card.slug)}>
+                <img className="fans-card-image" src={card.image} alt={card.title} loading="lazy" />
+                <img className="fans-card-dim" src={dimOverlayUrl} alt="" aria-hidden="true" />
+                <p className="fans-card-title">{card.title}</p>
+              </Link>
+            ))}
+          </section>
         </div>
       </main>
+
+      <nav className="fans-bottombar" aria-label="Bottom navigation">
+        <div className="fans-shell fans-navrow">
+          {navIcons.map((iconUrl, index) => (
+            <button key={iconUrl} type="button" className="fans-navbtn" aria-label={`Tab ${index + 1}`}>
+              <img src={iconUrl} alt="" aria-hidden="true" />
+            </button>
+          ))}
+        </div>
+      </nav>
     </div>
   );
 }
