@@ -44,7 +44,7 @@ export default function Home() {
 
       <main className="fans-content">
         <div className="fans-shell">
-          <section className="fans-grid" aria-label="Artist grid">
+          <section className="grid grid-cols-2 gap-px bg-[var(--fans-divider)] min-[631px]:grid-cols-3" aria-label="Artist grid">
             {cards.map((card) => (
               <Link key={card.title} className="fans-card" href={buildCommunityUrl(card.slug)}>
                 <img className="fans-card-image" src={card.image} alt={card.title} loading="lazy" />
